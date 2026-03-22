@@ -166,12 +166,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
     'https://spotlight2-etmb.onrender.com',
     'https://spotlight2.vercel.app',
+    "https://spotlight2-3svsf1tmv-natdanyumul-s770s-projects.vercel.app",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     'https://spotlight2-etmb.onrender.com',
     'https://spotlight2.vercel.app',
+    "https://spotlight2-3svsf1tmv-natdanyumul-s770s-projects.vercel.app",
 ]
 
 REST_FRAMEWORK = {
