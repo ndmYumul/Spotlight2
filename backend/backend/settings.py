@@ -157,10 +157,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, "static_cdn", "media_root")
 
-"""
-CORS_ALLOW_ALL_ORIGINS = True
-"""
 
+CORS_ALLOW_CREDENTIALS = True
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+
+"""
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -168,13 +172,23 @@ CORS_ALLOWED_ORIGINS = [
     'https://spotlight2.vercel.app',
     "https://spotlight2-3svsf1tmv-natdanyumul-s770s-projects.vercel.app",
 ]
+"""
 
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://spotlight2-etmb.onrender.com",
+    "https://*.vercel.app",  
+]
+
+
+"""
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     'https://spotlight2-etmb.onrender.com',
     'https://spotlight2.vercel.app',
     "https://spotlight2-3svsf1tmv-natdanyumul-s770s-projects.vercel.app",
 ]
+"""
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
