@@ -36,6 +36,10 @@ import {
     notificationReadReducer,
 } from './reducers/notificationReducers'
 
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://spotlight2-etmb.onrender.com'
+
 const reducer = combineReducers({
     // User state
     userLogin: userLoginReducer,

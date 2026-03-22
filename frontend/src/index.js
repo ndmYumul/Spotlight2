@@ -7,6 +7,9 @@ import './bootstrap.min.css';
 import { Provider } from 'react-redux';
 import store from './store';
 import { ThemeProvider } from './ThemeContext';
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://spotlight2-etmb.onrender.com'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
