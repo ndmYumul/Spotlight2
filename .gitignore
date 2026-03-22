@@ -1,0 +1,15 @@
+# General
+.DS_Store
+.env
+*.log
+
+# Backend
+backend/db.sqlite3
+backend/__pycache__/
+backend/*.pyc
+backend/myenv/
+backend/static_cdn/
+backend/media_cdn/
+
+# Frontend
+frontend/node_modules/
