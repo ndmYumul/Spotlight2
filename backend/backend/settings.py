@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False').upper() == 'TRUE'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['spotlight2-etmb.onrender.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -162,12 +162,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    # https://spotlight.onrender.com
+    'https://spotlight2-etmb.onrender.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
-    # https://spotlight.onrender.com
+    'https://spotlight2-etmb.onrender.com'
 ]
 
 REST_FRAMEWORK = {
