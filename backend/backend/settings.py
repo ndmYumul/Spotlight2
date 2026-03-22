@@ -37,6 +37,7 @@ ALLOWED_HOSTS = ['spotlight2-etmb.onrender.com', '127.0.0.1', 'localhost', '.onr
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
@@ -146,11 +147,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_my_project'),
-] if os.path.exists(os.path.join(BASE_DIR, 'static_my_project')) else []
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_my_project')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn", "static_root")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -166,13 +165,13 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
     'https://spotlight2-etmb.onrender.com',
-    'https://spotlight2.vercel.app/',
+    'https://spotlight2.vercel.app',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     'https://spotlight2-etmb.onrender.com',
-    'https://spotlight2.vercel.app/',
+    'https://spotlight2.vercel.app',
 ]
 
 REST_FRAMEWORK = {
