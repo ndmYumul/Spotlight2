@@ -19,15 +19,24 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 
 def api_root(request):
     return JsonResponse({"message": "Spotlight2 API is live!"})
+
+def create_admin(request):
+    if not User.objects.filter(username='admin@gmail.com').exists():
+        User.objects.create_superuser('admin@gmail.com', 'admin@gmail.com', '123')
+        return HttpResponse("Admin created!")
+    return HttpResponse("Admin already exists.")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/chatbot/', include('ai_chatbot.urls')),
     path('api/', include('base.urls')),
     path('', api_root),
+    path('create-admin/', create_admin)
 ]
 
 if settings.DEBUG:
