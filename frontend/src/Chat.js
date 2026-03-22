@@ -16,7 +16,7 @@ const Chat = () => {
                 const token = userInfo ? JSON.parse(userInfo).token : null;
                 if (!token) return;
 
-                const response = await fetch('http://127.0.0.1:8000/api/chatbot/history/', {
+                const response = await fetch('https://spotlight2-etmb.onrender.com/api/chatbot/history/', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 
@@ -61,7 +61,7 @@ const Chat = () => {
             const userInfo = localStorage.getItem('userInfo');
             const token = userInfo ? JSON.parse(userInfo).token : null;
 
-            const response = await fetch('http://127.0.0.1:8000/api/chatbot/chat/', {
+            const response = await fetch('https://spotlight2-etmb.onrender.com/api/chatbot/chat/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const Chat = () => {
             const userInfo = localStorage.getItem('userInfo');
             const token = userInfo ? JSON.parse(userInfo).token : null;
 
-            await fetch('http://127.0.0.1:8000/api/chatbot/clear/', {
+            await fetch('https://spotlight2-etmb.onrender.com/api/chatbot/clear/', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${token}` }
             });
