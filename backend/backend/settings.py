@@ -38,16 +38,16 @@ ALLOWED_HOSTS = ['spotlight2-etmb.onrender.com', '127.0.0.1', 'localhost', '.onr
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
-    'cloudinary_storage',
-    'django.contrib.staticfiles',
-    'cloudinary',
-    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
 
+    'cloudinary_storage',
+    'cloudinary',
+    
     'base.apps.BaseConfig',
     'rest_framework',
     'corsheaders',
@@ -56,9 +56,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
